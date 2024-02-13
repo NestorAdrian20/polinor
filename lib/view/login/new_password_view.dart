@@ -33,7 +33,7 @@ class _NewPasswordViewState extends State<NewPasswordView> {
                 height: 64,
               ),
               Text(
-                "New Password",
+                "Nueva contraseña",
                 style: TextStyle(
                     color: TColor.primaryText,
                     fontSize: 30,
@@ -43,7 +43,7 @@ class _NewPasswordViewState extends State<NewPasswordView> {
                 height: 15,
               ),
               Text(
-                "Please enter your new password",
+                "Por favor ingrese su nueva contraseña.",
                 style: TextStyle(
                     color: TColor.secondaryText,
                     fontSize: 14,
@@ -53,7 +53,7 @@ class _NewPasswordViewState extends State<NewPasswordView> {
                 height: 60,
               ),
               RoundTextfield(
-                hintText: "New Password",
+                hintText: "Nueva contraseña",
                 controller: txtPassword,
                 obscureText: true,
               ),
@@ -61,14 +61,14 @@ class _NewPasswordViewState extends State<NewPasswordView> {
                 height: 25,
               ),
                RoundTextfield(
-                hintText: "Confirm Password",
+                hintText: "confirmar Contraseña",
                 controller: txtConfirmPassword,
                 obscureText: true,
               ),
               const SizedBox(
                 height: 30,
               ),
-              RoundButton(title: "Next", onPressed: () {
+              RoundButton(title: "Siguiente", onPressed: () {
                 btnSubmit();
               }),
             ],
@@ -122,3 +122,6 @@ class _NewPasswordViewState extends State<NewPasswordView> {
     });
   }
 }
+
+
+

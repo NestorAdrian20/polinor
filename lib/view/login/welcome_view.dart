@@ -40,7 +40,7 @@ class _WelcomeViewState extends State<WelcomeView> {
               height: media.width * 0.1,
             ),
             Text(
-              "Discover the best foods from over 1,000\nrestaurants and fast delivery to your\ndoorstep",
+              "La mejor tecnología, el mejor sistema de producción y el recurso humano mejor capacitado.",
               textAlign: TextAlign.center,
               style: TextStyle(
                   color: TColor.secondaryText,
@@ -53,7 +53,7 @@ class _WelcomeViewState extends State<WelcomeView> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: RoundButton(
-                title: "Login",
+                title: "Entrar",
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -70,7 +70,7 @@ class _WelcomeViewState extends State<WelcomeView> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: RoundButton(
-                title: "Create an Account",
+                title: "Crea una Cuenta",
                 type: RoundButtonType.textPrimary,
                 onPressed: () {
                    Navigator.push(

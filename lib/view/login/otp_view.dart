@@ -33,7 +33,7 @@ class _OTPViewState extends State<OTPView> {
                 height: 64,
               ),
               Text(
-                "We have sent an OTP to your email",
+                "Hemos enviado una OTP a tu correo electrónico",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: TColor.primaryText,
@@ -44,7 +44,7 @@ class _OTPViewState extends State<OTPView> {
                 height: 15,
               ),
               Text(
-                "Please check your email ${widget.email}\ncontinue to reset your password",
+                "Por favor revise su correo electrónico ${widget.email}\ncontinúa restableciendo tu contraseña.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: TColor.secondaryText,
@@ -133,7 +133,7 @@ class _OTPViewState extends State<OTPView> {
                 height: 30,
               ),
               RoundButton(
-                  title: "Next",
+                  title: "Próxima",
                   onPressed: () {
                     btnSubmit();
                   }),
@@ -145,14 +145,14 @@ class _OTPViewState extends State<OTPView> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "Didn't Received? ",
+                      "¿No lo recibió?",
                       style: TextStyle(
                           color: TColor.secondaryText,
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      "Click Here",
+                      "Haga clic aquí",
                       style: TextStyle(
                           color: TColor.primary,
                           fontSize: 14,
@@ -212,7 +212,7 @@ class _OTPViewState extends State<OTPView> {
       Globs.hideHUD();
       if (responseObj[KKey.status] == "1") {
          mdShowAlert(Globs.appName,
-            "reset code successfully", () {});
+            "Restablecer código exitosamente", () {});
        
       } else {
         mdShowAlert(Globs.appName,

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/common/color_extension.dart';
 import 'package:food_delivery/common/extension.dart';
 import 'package:food_delivery/common_widget/round_button.dart';
+import 'package:food_delivery/view/home/home_view.dart';
 import 'package:food_delivery/view/login/login_view.dart';
 
 import '../../common/globs.dart';
@@ -40,14 +41,14 @@ class _SignUpViewState extends State<SignUpView> {
                 height: 64,
               ),
               Text(
-                "Sign Up",
+                "Registrarse",
                 style: TextStyle(
                     color: TColor.primaryText,
                     fontSize: 30,
                     fontWeight: FontWeight.w800),
               ),
               Text(
-                "Add your details to sign up",
+                "Añade tus datos para registrarte",
                 style: TextStyle(
                     color: TColor.secondaryText,
                     fontSize: 14,
@@ -57,14 +58,14 @@ class _SignUpViewState extends State<SignUpView> {
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Name",
+                hintText: "Nombre",
                 controller: txtName,
               ),
               const SizedBox(
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Email",
+                hintText: "Correo",
                 controller: txtEmail,
                 keyboardType: TextInputType.emailAddress,
               ),
@@ -72,7 +73,7 @@ class _SignUpViewState extends State<SignUpView> {
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Mobile No",
+                hintText: "Número de telefono",
                 controller: txtMobile,
                 keyboardType: TextInputType.phone,
               ),
@@ -80,14 +81,14 @@ class _SignUpViewState extends State<SignUpView> {
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Address",
+                hintText: "Dirección",
                 controller: txtAddress,
               ),
               const SizedBox(
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Password",
+                hintText: "Contraseña",
                 controller: txtPassword,
                 obscureText: true,
               ),
@@ -95,21 +96,21 @@ class _SignUpViewState extends State<SignUpView> {
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Confirm Password",
+                hintText: "Confirma tu contraseña",
                 controller: txtConfirmPassword,
                 obscureText: true,
               ),
               const SizedBox(
                 height: 25,
               ),
-              RoundButton(title: "Sign Up", onPressed: () {
+              RoundButton(title: "Registrarse", onPressed: () {
                 btnSignUp();
-                //  Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //         builder: (context) => const OTPView(),
-                //       ),
-                //     );
+                  Navigator.push(
+                       context,
+                       MaterialPageRoute(
+                         builder: (context) => const HomeView(),
+                       ),
+                     );
               }),
               const SizedBox(
                 height: 30,
@@ -127,14 +128,14 @@ class _SignUpViewState extends State<SignUpView> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "Already have an Account? ",
+                      "¿Ya tienes una cuenta? ",
                       style: TextStyle(
                           color: TColor.secondaryText,
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      "Login",
+                      "Entrar",
                       style: TextStyle(
                           color: TColor.primary,
                           fontSize: 14,
@@ -200,14 +201,14 @@ class _SignUpViewState extends State<SignUpView> {
   //TODO: ServiceCall
 
   void serviceCallSignUp(Map<String, dynamic> parameter) {
-    Globs.showHUD();
+    //Globs.showHUD();
 
-    ServiceCall.post(parameter, SVKey.svSignUp,
+    /*ServiceCall.post(parameter, SVKey.svSignUp,
         withSuccess: (responseObj) async {
       Globs.hideHUD();
       if (responseObj[KKey.status] == "1") {
         Globs.udSet(responseObj[KKey.payload] as Map? ?? {}, Globs.userPayload);
-        Globs.udBoolSet(true, Globs.userLogin);
+        Globs.udBoolSet(true, Globs.userLogin);*/
         
         Navigator.pushAndRemoveUntil(
             context,
@@ -215,13 +216,13 @@ class _SignUpViewState extends State<SignUpView> {
               builder: (context) => const OnBoardingView(),
             ),
             (route) => false);
-      } else {
+      /*} else {
         mdShowAlert(Globs.appName,
             responseObj[KKey.message] as String? ?? MSG.fail, () {});
       }
     }, failure: (err) async {
       Globs.hideHUD();
       mdShowAlert(Globs.appName, err.toString(), () {});
-    });
+    });*/
   }
 }

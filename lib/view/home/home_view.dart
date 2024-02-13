@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/common/color_extension.dart';
 import 'package:food_delivery/common_widget/round_textfield.dart';
+import 'package:food_delivery/view/menu/item_details_view.dart';
 
 import '../../common/globs.dart';
 import '../../common/service_call.dart';
@@ -22,10 +23,12 @@ class _HomeViewState extends State<HomeView> {
   TextEditingController txtSearch = TextEditingController();
 
   List catArr = [
-    {"image": "assets/img/cat_offer.png", "name": "Offers"},
-    {"image": "assets/img/cat_sri.png", "name": "Sri Lankan"},
-    {"image": "assets/img/cat_3.png", "name": "Italian"},
-    {"image": "assets/img/cat_4.png", "name": "Indian"},
+    {"image": "assets/img/cat_offer.png", "name": "Rollo"},
+    {"image": "assets/img/cat_sri.png", "name": "Bolsa"},
+    {"image": "assets/img/cat_3.png", "name": "Película"},
+    {"image": "assets/img/cat_4.png", "name": "Flexografía"},
+    {"image": "assets/img/cat_4.png", "name": "Laminación"},
+    {"image": "assets/img/cat_4.png", "name": "Coextrución"},
   ];
 
   List popArr = [
@@ -118,7 +121,7 @@ class _HomeViewState extends State<HomeView> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Good morning ${ServiceCall.userPayload[KKey.name] ?? ""}!",
+                      "Bienvenido ${ServiceCall.userPayload[KKey.name] ?? ""}!",
                       style: TextStyle(
                           color: TColor.primaryText,
                           fontSize: 20,
@@ -131,7 +134,7 @@ class _HomeViewState extends State<HomeView> {
                             MaterialPageRoute(
                                 builder: (context) => const MyOrderView()));
                       },
-                      icon: Image.asset(
+                      icon: Image.asset( 
                         "assets/img/shopping_cart.png",
                         width: 25,
                         height: 25,
@@ -149,7 +152,7 @@ class _HomeViewState extends State<HomeView> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Delivering to",
+                      "Entregando a",
                       style:
                           TextStyle(color: TColor.secondaryText, fontSize: 11),
                     ),
@@ -160,7 +163,7 @@ class _HomeViewState extends State<HomeView> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          "Current Location",
+                          "Localización actual",
                           style: TextStyle(
                               color: TColor.secondaryText,
                               fontSize: 16,
@@ -185,7 +188,7 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: RoundTextfield(
-                  hintText: "Search Food",
+                  hintText: "Buscar producto",
                   controller: txtSearch,
                   left: Container(
                     alignment: Alignment.center,
@@ -211,7 +214,14 @@ class _HomeViewState extends State<HomeView> {
                     var cObj = catArr[index] as Map? ?? {};
                     return CategoryCell(
                       cObj: cObj,
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ItemDetailsView(),
+                          ),
+                        );
+                      },
                     );
                   }),
                 ),
@@ -219,7 +229,7 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ViewAllTitleRow(
-                  title: "Popular Restaurants",
+                  title: "Populares",
                   onView: () {},
                 ),
               ),
@@ -232,15 +242,27 @@ class _HomeViewState extends State<HomeView> {
                   var pObj = popArr[index] as Map? ?? {};
                   return PopularRestaurantRow(
                     pObj: pObj,
-                    onTap: () {},
+                    onTap: () {Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ItemDetailsView(),
+                    ),
+                  );},
                   );
                 }),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ViewAllTitleRow(
-                  title: "Most Popular",
-                  onView: () {},
+                  title: "Mas vendidos",
+                  onView: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ItemDetailsView(),
+                    ),
+                  );
+                  },
                 ),
               ),
               SizedBox(
@@ -253,7 +275,14 @@ class _HomeViewState extends State<HomeView> {
                     var mObj = mostPopArr[index] as Map? ?? {};
                     return MostPopularCell(
                       mObj: mObj,
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ItemDetailsView(),
+                    ),
+                  );
+                      },
                     );
                   }),
                 ),
@@ -261,7 +290,7 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ViewAllTitleRow(
-                  title: "Recent Items",
+                  title: "Recientes",
                   onView: () {},
                 ),
               ),
@@ -274,7 +303,14 @@ class _HomeViewState extends State<HomeView> {
                   var rObj = recentArr[index] as Map? ?? {};
                   return RecentItemRow(
                     rObj: rObj,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ItemDetailsView(),
+                    ),
+                  );
+                    },
                   );
                 }),
               )
