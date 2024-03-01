@@ -10,6 +10,8 @@ import 'package:food_delivery/view/login/login_view.dart';
 import '../../common/globs.dart';
 import '../../common/service_call.dart';
 import '../../common_widget/round_textfield.dart';
+import '../../services/firebase/auth_firebase.dart';
+import '../main_tabview/main_tabview.dart';
 import '../on_boarding/on_boarding_view.dart';
 
 class SignUpView extends StatefulWidget {
@@ -108,7 +110,7 @@ class _SignUpViewState extends State<SignUpView> {
                   Navigator.push(
                        context,
                        MaterialPageRoute(
-                         builder: (context) => const HomeView(),
+                         builder: (context) => const MainTabView(),
                        ),
                      );
               }),
@@ -188,7 +190,6 @@ class _SignUpViewState extends State<SignUpView> {
 
     serviceCallSignUp({
       "name": txtName.text,
-
       "mobile": txtMobile.text,
       "email": txtEmail.text,
       "address": txtAddress.text,
@@ -196,11 +197,14 @@ class _SignUpViewState extends State<SignUpView> {
       "push_token": "",
       "device_type": Platform.isAndroid ? "A" : "I"
     });
+    
+    addUsers(txtName.text, txtMobile.text, txtEmail.text, txtAddress.text, txtPassword.text);
+    //addUser(txtEmail.text, txtPassword.text);
   }
 
   //TODO: ServiceCall
 
-  void serviceCallSignUp(Map<String, dynamic> parameter) {
+  Future<void> serviceCallSignUp(Map<String, dynamic> parameter) async {
     //Globs.showHUD();
 
     /*ServiceCall.post(parameter, SVKey.svSignUp,

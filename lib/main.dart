@@ -5,6 +5,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:food_delivery/common/color_extension.dart';
 import 'package:food_delivery/common/locator.dart';
 import 'package:food_delivery/common/service_call.dart';
+import 'package:food_delivery/firebase_options.dart';
 import 'package:food_delivery/view/login/welcome_view.dart';
 import 'package:food_delivery/view/main_tabview/main_tabview.dart';
 import 'package:food_delivery/view/on_boarding/startup_view.dart';
@@ -13,11 +14,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'common/globs.dart';
 import 'common/my_http_overrides.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+
 SharedPreferences? prefs;
 void main() async {
   setUpLocator();
   HttpOverrides.global = MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
   prefs = await SharedPreferences.getInstance();
 
   if(Globs.udValueBool(Globs.userLogin)) {

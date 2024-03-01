@@ -12,6 +12,7 @@ import '../../common_widget/recent_item_row.dart';
 import '../../common_widget/view_all_title_row.dart';
 import '../more/my_order_view.dart';
 
+
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -22,85 +23,85 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   TextEditingController txtSearch = TextEditingController();
 
-  List catArr = [
-    {"image": "assets/img/cat_offer.png", "name": "Rollo"},
-    {"image": "assets/img/cat_sri.png", "name": "Bolsa"},
-    {"image": "assets/img/cat_3.png", "name": "Película"},
-    {"image": "assets/img/cat_4.png", "name": "Flexografía"},
-    {"image": "assets/img/cat_4.png", "name": "Laminación"},
-    {"image": "assets/img/cat_4.png", "name": "Coextrución"},
-  ];
+  /*List catArr = [
+    {"image": "assets/img/polietileno.png", "name": "Rollo"},
+    {"image": "assets/img/polietileno.png", "name": "Bolsa"},
+    {"image": "assets/img/polietileno.png", "name": "Película"},
+    {"image": "assets/img/polietileno.png", "name": "Flexografía"},
+    {"image": "assets/img/polietileno.png", "name": "Laminación"},
+    {"image": "assets/img/polietileno.png", "name": "Coextrusión"},
+  ];*/
 
   List popArr = [
     {
-      "image": "assets/img/res_1.png",
-      "name": "Minute by tuk tuk",
+      "image": "assets/img/polietileno.png",
+      "name": "bolsas Blancas",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Alta dencidad",
+      "food_type": "polietileno"
     },
     {
-      "image": "assets/img/res_2.png",
-      "name": "Café de Noir",
+      "image": "assets/img/polietileno.png",
+      "name": "Bobina",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Carton",
+      "food_type": "carton"
     },
     {
-      "image": "assets/img/res_3.png",
-      "name": "Bakes by Tella",
+      "image": "assets/img/polietileno.png",
+      "name": "Rollo",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Transparente",
+      "food_type": "Polietileno"
     },
   ];
 
   List mostPopArr = [
     {
-      "image": "assets/img/m_res_1.png",
-      "name": "Minute by tuk tuk",
+      "image": "assets/img/polietileno.png",
+      "name": "Bolsa",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Transparente",
+      "food_type": "Polietileno"
     },
     {
-      "image": "assets/img/m_res_2.png",
-      "name": "Café de Noir",
+      "image": "assets/img/polietileno.png",
+      "name": "Bobina",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Carton",
+      "food_type": "Carton"
     },
   ];
 
   List recentArr = [
     {
-      "image": "assets/img/item_1.png",
-      "name": "Mulberry Pizza by Josh",
+      "image": "assets/img/polietileno.png",
+      "name": "Bolsa",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Transparente",
+      "food_type": "Polietileno"
     },
     {
-      "image": "assets/img/item_2.png",
-      "name": "Barita",
+      "image": "assets/img/polietileno.png",
+      "name": "Rollo",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Color Negro",
+      "food_type": "Polietileno"
     },
     {
-      "image": "assets/img/item_3.png",
-      "name": "Pizza Rush Hour",
+      "image": "assets/img/polietileno.png",
+      "name": "Rollo",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Color",
+      "food_type": "Amarillo"
     },
   ];
 
@@ -121,7 +122,7 @@ class _HomeViewState extends State<HomeView> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Bienvenido ${ServiceCall.userPayload[KKey.name] ?? ""}!",
+                      "Buenos dias ${ServiceCall.userPayload[KKey.name] ?? ""}!",
                       style: TextStyle(
                           color: TColor.primaryText,
                           fontSize: 20,
@@ -134,12 +135,12 @@ class _HomeViewState extends State<HomeView> {
                             MaterialPageRoute(
                                 builder: (context) => const MyOrderView()));
                       },
-                      icon: Image.asset( 
+                      icon: Image.asset(
                         "assets/img/shopping_cart.png",
                         width: 25,
                         height: 25,
                       ),
-                    ),
+                    ),             
                   ],
                 ),
               ),
@@ -163,7 +164,7 @@ class _HomeViewState extends State<HomeView> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          "Localización actual",
+                          "Ubicación actual",
                           style: TextStyle(
                               color: TColor.secondaryText,
                               fontSize: 16,
@@ -202,9 +203,12 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
               const SizedBox(
+                height: 20,
+              ),
+              const SizedBox(
                 height: 30,
               ),
-              SizedBox(
+              /*SizedBox(
                 height: 120,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -225,11 +229,11 @@ class _HomeViewState extends State<HomeView> {
                     );
                   }),
                 ),
-              ),
+              ),*/
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ViewAllTitleRow(
-                  title: "Populares",
+                  title: "Mas vendidos",
                   onView: () {},
                 ),
               ),
@@ -254,7 +258,7 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ViewAllTitleRow(
-                  title: "Mas vendidos",
+                  title: "Mas populares",
                   onView: () {
                     Navigator.push(
                     context,

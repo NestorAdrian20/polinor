@@ -19,7 +19,7 @@ class _MenuItemsViewState extends State<MenuItemsView> {
 
   List menuItemsArr = [
     {
-      "image": "assets/img/dess_1.png",
+      "image": "assets/img/polietileno.png",
       "name": "French Apple Pie",
       "rate": "4.9",
       "rating": "124",
@@ -27,7 +27,7 @@ class _MenuItemsViewState extends State<MenuItemsView> {
       "food_type": "Desserts"
     },
     {
-      "image": "assets/img/dess_2.png",
+      "image": "assets/img/polietileno.png",
       "name": "Dark Chocolate Cake",
       "rate": "4.9",
       "rating": "124",
@@ -35,7 +35,7 @@ class _MenuItemsViewState extends State<MenuItemsView> {
       "food_type": "Desserts"
     },
     {
-      "image": "assets/img/dess_3.png",
+      "image": "assets/img/polietileno.png",
       "name": "Street Shake",
       "rate": "4.9",
       "rating": "124",
@@ -43,7 +43,7 @@ class _MenuItemsViewState extends State<MenuItemsView> {
       "food_type": "Desserts"
     },
     {
-      "image": "assets/img/dess_4.png",
+      "image": "assets/img/polietileno.png",
       "name": "Fudgy Chewy Brownies",
       "rate": "4.9",
       "rating": "124",
@@ -51,7 +51,7 @@ class _MenuItemsViewState extends State<MenuItemsView> {
       "food_type": "Desserts"
     },
     {
-      "image": "assets/img/dess_1.png",
+      "image": "assets/img/polietileno.png",
       "name": "French Apple Pie",
       "rate": "4.9",
       "rating": "124",
@@ -59,7 +59,7 @@ class _MenuItemsViewState extends State<MenuItemsView> {
       "food_type": "Desserts"
     },
     {
-      "image": "assets/img/dess_2.png",
+      "image": "assets/img/polietileno.png",
       "name": "Dark Chocolate Cake",
       "rate": "4.9",
       "rating": "124",
@@ -67,7 +67,7 @@ class _MenuItemsViewState extends State<MenuItemsView> {
       "food_type": "Desserts"
     },
     {
-      "image": "assets/img/dess_3.png",
+      "image": "assets/img/polietileno.png",
       "name": "Street Shake",
       "rate": "4.9",
       "rating": "124",
@@ -75,7 +75,7 @@ class _MenuItemsViewState extends State<MenuItemsView> {
       "food_type": "Desserts"
     },
     {
-      "image": "assets/img/dess_4.png",
+      "image": "assets/img/polietileno.png",
       "name": "Fudgy Chewy Brownies",
       "rate": "4.9",
       "rating": "124",

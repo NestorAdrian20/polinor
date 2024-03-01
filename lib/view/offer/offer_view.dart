@@ -17,52 +17,52 @@ class _OfferViewState extends State<OfferView> {
 
   List offerArr = [
     {
-      "image": "assets/img/offer_1.png",
-      "name": "Café de Noires",
+      "image": "assets/img/polietileno.png",
+      "name": "Bolsas",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Negras",
+      "food_type": "Polietileno"
     },
     {
-      "image": "assets/img/offer_2.png",
-      "name": "Isso",
+      "image": "assets/img/polietileno.png",
+      "name": "Rollo",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Negro",
+      "food_type": "Polietileno"
     },
     {
-      "image": "assets/img/offer_3.png",
-      "name": "Cafe Beans",
+      "image": "assets/img/polietileno.png",
+      "name": "Rollo",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Morado",
+      "food_type": "Polietileno"
     },
     {
-      "image": "assets/img/offer_1.png",
-      "name": "Café de Noires",
+      "image": "assets/img/polietileno.png",
+      "name": "Bolsas",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Amarillas",
+      "food_type": "Polietileno"
     },
     {
-      "image": "assets/img/offer_2.png",
-      "name": "Isso",
+      "image": "assets/img/polietileno.png",
+      "name": "Bobinas",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Carton",
+      "food_type": "Carton"
     },
     {
-      "image": "assets/img/offer_3.png",
-      "name": "Cafe Beans",
+      "image": "assets/img/polietileno.png",
+      "name": "Bolsa",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "Azul",
+      "food_type": "Polietileno"
     },
   ];
 
@@ -84,7 +84,7 @@ class _OfferViewState extends State<OfferView> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Latest Offers",
+                      "Últimas ofertas",
                       style: TextStyle(
                           color: TColor.primaryText,
                           fontSize: 20,
@@ -108,11 +108,11 @@ class _OfferViewState extends State<OfferView> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
+                child: Column( 
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Find discounts, Offers special\nmeals and more!",
+                      "¡Encuentra descuentos, ofertas\nproductos especiales y más!",
                       style: TextStyle(
                           color: TColor.secondaryText,
                           fontSize: 14,
@@ -129,7 +129,7 @@ class _OfferViewState extends State<OfferView> {
                 child: SizedBox(
                   width: 140,
                   height: 30,
-                  child: RoundButton(title: "check Offers", fontSize: 12 , onPressed: () {}),
+                  child: RoundButton(title: "Consultar ofertas", fontSize: 12 , onPressed: () {}),
                 ),
               ),
               const SizedBox(

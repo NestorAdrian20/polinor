@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/common/color_extension.dart';
 import 'package:food_delivery/common_widget/round_button.dart';
 
+import 'add_card_view.dart';
 import 'change_address_view.dart';
 import 'checkout_message_view.dart';
 
@@ -137,7 +138,12 @@ class _CheckoutViewState extends State<CheckoutView> {
                               fontWeight: FontWeight.w500),
                         ),
                         TextButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AddCardView()));
+                          },
                           icon: Icon(Icons.add, color: TColor.primary),
                           label: Text(
                             "Add Card",

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/services/firebase/login_firestore.dart';
 
 import '../../common/color_extension.dart';
 import '../../common_widget/round_textfield.dart';
@@ -15,23 +16,43 @@ class MenuView extends StatefulWidget {
 class _MenuViewState extends State<MenuView> {
   List menuArr = [
     {
-      "name": "Food",
-      "image": "assets/img/menu_1.png",
+      "name": "Rollo",
+      "image": "assets/img/polietileno.png",
       "items_count": "120",
     },
     {
-      "name": "Beverages",
-      "image": "assets/img/menu_2.png",
+      "name": "Bolsa",
+      "image": "assets/img/polietileno.png",
       "items_count": "220",
     },
     {
-      "name": "Desserts",
-      "image": "assets/img/menu_3.png",
+      "name": "Películas",
+      "image": "assets/img/polietileno.png",
       "items_count": "155",
     },
     {
-      "name": "Promotions",
-      "image": "assets/img/menu_4.png",
+      "name": "Flexografía",
+      "image": "assets/img/polietileno.png",
+      "items_count": "25",
+    },
+    {
+      "name": "Laminación",
+      "image": "assets/img/polietileno.png",
+      "items_count": "25",
+    },
+    {
+      "name": "Coextrusión",
+      "image": "assets/img/polietileno.png",
+      "items_count": "25",
+    },
+    {
+      "name": "Bobinas",
+      "image": "assets/img/polietileno.png",
+      "items_count": "25",
+    },
+    {
+      "name": "Polipropileno biorientado",
+      "image": "assets/img/polietileno.png",
       "items_count": "25",
     },
   ];
@@ -69,7 +90,7 @@ class _MenuViewState extends State<MenuView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Menu",
+                          "Productos",
                           style: TextStyle(
                               color: TColor.primaryText,
                               fontSize: 20,
@@ -97,7 +118,7 @@ class _MenuViewState extends State<MenuView> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: RoundTextfield(
-                      hintText: "Search Food",
+                      hintText: "Buscar",
                       controller: txtSearch,
                       left: Container(
                         alignment: Alignment.center,
@@ -119,6 +140,7 @@ class _MenuViewState extends State<MenuView> {
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       itemCount: menuArr.length,
+                      //menuArr.length,
                       itemBuilder: ((context, index) {
                         var mObj = menuArr[index] as Map? ?? {};
                         return GestureDetector(

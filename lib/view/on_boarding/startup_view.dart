@@ -43,13 +43,13 @@ class _StarupViewState extends State<StartupView> {
         alignment: Alignment.center,
         children: [
           Image.asset(
-            "assets/img/splash_bg.png",
+            "assets/img/splash_polinor.png",
             width: media.width,
             height: media.height,
             fit: BoxFit.cover,
           ),
           Image.asset(
-            "assets/img/app_logo.png",
+            "assets/img/polinor.png",
              width: media.width * 0.55,
             height: media.width * 0.55,
             fit: BoxFit.contain,

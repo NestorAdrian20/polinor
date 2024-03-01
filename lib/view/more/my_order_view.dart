@@ -13,11 +13,11 @@ class MyOrderView extends StatefulWidget {
 
 class _MyOrderViewState extends State<MyOrderView> {
   List itemArr = [
-    {"name": "Beef Burger", "qty": "1", "price": 16.0},
-    {"name": "Classic Burger", "qty": "1", "price": 14.0},
-    {"name": "Cheese Chicken Burger", "qty": "1", "price": 17.0},
-    {"name": "Chicken Legs Basket", "qty": "1", "price": 15.0},
-    {"name": "French Fires Large", "qty": "1", "price": 6.0}
+    {"name": "Rollo c - 150", "qty": "1", "price": 16.0},
+    {"name": "Bolsa Negra", "qty": "1", "price": 14.0},
+    {"name": "Bobina", "qty": "1", "price": 17.0},
+    {"name": "Rollo Amarillo c - 50", "qty": "1", "price": 15.0},
+    {"name": "Bolsa Transparente", "qty": "1", "price": 6.0}
   ];
 
   @override
@@ -49,7 +49,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                     ),
                     Expanded(
                       child: Text(
-                        "My Order",
+                        "Mi pedido.",
                         style: TextStyle(
                             color: TColor.primaryText,
                             fontSize: 20,
@@ -67,7 +67,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                     ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
-                          "assets/img/shop_logo.png",
+                          "assets/img/polietileno.png",
                           width: 80,
                           height: 80,
                           fit: BoxFit.cover,
@@ -80,7 +80,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "King Burgers",
+                            "Producto",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 color: TColor.primaryText,
@@ -126,7 +126,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                "Burger",
+                                "Bolsa",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     color: TColor.secondaryText, fontSize: 12),
@@ -138,7 +138,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                                     color: TColor.primary, fontSize: 12),
                               ),
                               Text(
-                                "Western Food",
+                                "Alta densidad",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     color: TColor.secondaryText, fontSize: 12),
@@ -162,7 +162,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                               ),
                               Expanded(
                                 child: Text(
-                                  "No 03, 4th Lane, Newyork",
+                                  "No 03, 4th Lane, Tila Chiapas",
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       color: TColor.secondaryText,
@@ -235,7 +235,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Delivery Instructions",
+                          "Instrucciones de entrega.",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: TColor.primaryText,
@@ -246,7 +246,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                           onPressed: () {},
                           icon: Icon(Icons.add, color: TColor.primary),
                           label: Text(
-                            "Add Notes",
+                            "Agregar notas.",
                             style: TextStyle(
                                 color: TColor.primary,
                                 fontSize: 13,
@@ -266,7 +266,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Sub Total",
+                          "Subtotal.",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: TColor.primaryText,
@@ -289,7 +289,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Delivery Cost",
+                          "Coste de envío.",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: TColor.primaryText,
@@ -339,7 +339,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                       height: 25,
                     ),
                     RoundButton(
-                        title: "Checkout",
+                        title: "Verificar.",
                         onPressed: () {
                           Navigator.push(
                             context,

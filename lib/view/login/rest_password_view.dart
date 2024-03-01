@@ -6,6 +6,8 @@ import 'package:food_delivery/view/login/otp_view.dart';
 import '../../common/globs.dart';
 import '../../common/service_call.dart';
 import '../../common_widget/round_textfield.dart';
+import '../../services/firebase/auth_firebase.dart';
+import 'login_view.dart';
 import 'new_password_view.dart';
 
 class ResetPasswordView extends StatefulWidget {
@@ -83,10 +85,17 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
     }
 
     endEditing();
-
-    serviceCallForgotRequest({
+    
+    resetPassword(txtEmail.text);
+    Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const LoginView(),
+            ),
+            (route) => false);
+    /*serviceCallForgotRequest({
       "email": txtEmail.text
-    });
+    });*/
   }
 
   //TODO: ServiceCall

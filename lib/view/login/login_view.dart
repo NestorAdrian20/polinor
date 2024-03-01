@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/common/color_extension.dart';
 import 'package:food_delivery/common/extension.dart';
 import 'package:food_delivery/common/globs.dart';
 import 'package:food_delivery/common_widget/round_button.dart';
+import 'package:food_delivery/view/home/home_view.dart';
 import 'package:food_delivery/view/login/rest_password_view.dart';
 import 'package:food_delivery/view/login/sing_up_view.dart';
 import 'package:food_delivery/view/on_boarding/on_boarding_view.dart';
@@ -10,6 +12,8 @@ import 'package:food_delivery/view/on_boarding/on_boarding_view.dart';
 import '../../common/service_call.dart';
 import '../../common_widget/round_icon_button.dart';
 import '../../common_widget/round_textfield.dart';
+import '../../services/firebase/auth_firebase.dart';
+import '../main_tabview/main_tabview.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -71,8 +75,33 @@ class _LoginViewState extends State<LoginView> {
               ),
               RoundButton(
                   title: "Entrar",
-                  onPressed: () {
-                    btnLogin();
+                  onPressed: () async {
+                    try {
+                    final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+                      email: txtEmail.text,
+                      password: txtPassword.text
+                    );
+
+                    User? user = credential.user;
+                    if (user != null) {
+                        // ignore: use_build_context_synchronously
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MainTabView(),//SignUpView(),
+                        ),
+                      );
+                    }
+                    
+                  } on FirebaseAuthException catch (e) {
+                    if (e.code == 'user-not-found') {
+                      print('No user found for that email.');
+                    } else if (e.code == 'wrong-password') {
+                      print('Wrong password provided for that user.');
+                    }
+                  }
+                   
+                    //btnLogin();
                     
                   }),
               const SizedBox(
@@ -112,7 +141,9 @@ class _LoginViewState extends State<LoginView> {
                 icon: "assets/img/facebook_logo.png",
                 title: "Inicia con Facebook",
                 color: const Color(0xff367FC0),
-                onPressed: () {},
+                onPressed: () {
+                  
+                },
               ),
               const SizedBox(
                 height: 25,

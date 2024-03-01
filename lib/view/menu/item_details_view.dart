@@ -26,7 +26,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
         alignment: Alignment.topCenter,
         children: [
           Image.asset(
-            "assets/img/detail_top.png",
+            "assets/img/peletspolietileno.jpg",
             width: media.width,
             height: media.width,
             fit: BoxFit.cover,
@@ -68,7 +68,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 25),
                                 child: Text(
-                                  "Tandoori Chicken Pizza",
+                                  "Nombre del producto.",
                                   style: TextStyle(
                                       color: TColor.primaryText,
                                       fontSize: 22,
@@ -115,7 +115,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                           height: 4,
                                         ),
                                         Text(
-                                          " 4 Star Ratings",
+                                          " 4 Estrellas de popularidad.",
                                           style: TextStyle(
                                               color: TColor.primary,
                                               fontSize: 11,
@@ -138,7 +138,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                           height: 4,
                                         ),
                                         Text(
-                                          "/per Portion",
+                                          "/Por tonelada.",
                                           style: TextStyle(
                                               color: TColor.primaryText,
                                               fontSize: 11,
@@ -156,7 +156,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 25),
                                 child: Text(
-                                  "Description",
+                                  "Descripcion.",
                                   style: TextStyle(
                                       color: TColor.primaryText,
                                       fontSize: 14,
@@ -170,7 +170,9 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 25),
                                 child: Text(
-                                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare leo non mollis id cursus. Eu euismod faucibus in leo malesuada",
+                                  """Materia prima: 
+                                        * Polietileno alta densidad 
+                                        * Polietileno baja densidad""",
                                   style: TextStyle(
                                       color: TColor.secondaryText,
                                       fontSize: 12),
@@ -194,7 +196,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 25),
                                 child: Text(
-                                  "Customize your Order",
+                                  "Personaliza tu pedido",
                                   style: TextStyle(
                                       color: TColor.primaryText,
                                       fontSize: 14,
@@ -229,7 +231,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                       }).toList(),
                                       onChanged: (val) {},
                                       hint: Text(
-                                        "- Select the size of portion -",
+                                        "- Seleccione la materia prima. -",
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             color: TColor.secondaryText,
@@ -244,7 +246,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.symmetric(horizontal: 25),
+                                     const EdgeInsets.symmetric(horizontal: 25),
                                 child: Container(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 15),
@@ -267,7 +269,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                       }).toList(),
                                       onChanged: (val) {},
                                       hint: Text(
-                                        "- Select the ingredients -",
+                                        "- Seleccione las caracteristicas de fabricación. -",
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             color: TColor.secondaryText,
@@ -286,7 +288,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                 child: Row(
                                   children: [
                                     Text(
-                                      "Number of Portions",
+                                      "Numero de toneladas",
                                       style: TextStyle(
                                           color: TColor.primaryText,
                                           fontSize: 14,
@@ -428,7 +430,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                                     CrossAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    "Total Price",
+                                                    "Precio total",
                                                     style: TextStyle(
                                                         color:
                                                             TColor.primaryText,
@@ -455,7 +457,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                                     width: 130,
                                                     height: 25,
                                                     child: RoundIconButton(
-                                                        title: "Add to Cart",
+                                                        title: "Agregar al.",
                                                         icon:
                                                             "assets/img/shopping_add.png",
                                                         color: TColor.primary,
